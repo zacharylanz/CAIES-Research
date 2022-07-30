@@ -1,0 +1,39 @@
+text	class	lemma
+Nation States	Adversary	Nation_States
+Terrorist	Adversary	Terrorists
+Industrial Spies	Adversary	Spies
+Organized Crime	Adversary	Organized_Crime
+Hacktivisits	Adversary	Hacktivists
+Cybercriminals	Adversary	Cyber_Criminals
+Insider	Adversary	Insiders
+APT	Adversary	APT
+Cyber Threat Actors	Adversary	Cyber_Actors
+Cyber criminals	Adversary	Cyber_Criminals
+State Sponsored	Adversary	Nation_States
+Nation State	Adversary	Nation_States
+Malicious Cyber Actors	Adversary	Cyber_Actors
+Cyber Actors	Adversary	Cyber_Actors
+Advanced Persistent Threat	Adversary	APT
+cyber criminal	Adversary	Cyber_Criminals
+malicious actor	Adversary	Cyber_Actors
+APT actors	Adversary	APT
+APT Actor	Adversary	APT
+Threat actors	Adversary	Cyber_Actors
+Cyber Attacker	Adversary	Cyber_Actors
+government cyber actors	Adversary	Nation_States
+North Korean Government	Adversary	Nation_States
+Chinese Government	Adversary	Nation_States
+Russian Government	Adversary	Nation_States
+state sponsored cyber actors	Adversary	Nation_States
+Attacker	Adversary	Cyber_Actors
+Russia based cybercriminal	Adversary	Nation_States
+Hackers	Adversary	Cyber_Actors
+cyber network exploitation actors	Adversary	Cyber_Actors
+CNE actors	Adversary	Cyber_Actors
+Malicious Actors	Adversary	Cyber_Actors
+Government Campaign	Adversary	Nation_States
+malicious actor	Adversary	Cyber_Actors
+Iranian Government	Adversary	Nation_States
+cybercriminal	Adversary	Cyber_Criminals
+state-sponsored	Adversary	Nation_States
+Advanced Persistent Threats	Adversary	APT

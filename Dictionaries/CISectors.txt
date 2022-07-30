@@ -1,0 +1,38 @@
+text	class	lemma
+Chemical	CI-Sector	Chemical
+Communications	CI-Sector	Communications
+Dams	CI-Sector	Dams
+Emergency Services	CI-Sector	Emergency
+Financial Services	CI-Sector	Financial
+Government Facilities	CI-Sector	Government
+Information Technology	CI-Sector	Technology
+Transportation Systems	CI-Sector	Transportation
+Commercial Facilities	CI-Sector	Commercial
+Critical Manufacturing	CI-Sector	Manufacturing
+Defense Industrial Base	CI-Sector	Defense
+Energy	CI-Sector	Energy
+Food and Agriculture	CI-Sector	FandA
+Healthcare and Public Health	CI-Sector	Health
+Nuclear	CI-Sector	Nuclear
+Water and Wastewater	CI-Sector	Water
+Water	CI-Sector	Water
+Health	CI-Sector	Health
+Finance	CI-Sector	Financial
+Healthcare	CI-Sector	Health
+Electric grid	CI-Sector	Energy
+oil and gas	CI-Sector	Energy
+Power	CI-Sector	Energy
+telecommunications	CI-Sector	Communications
+food and beverage	CI-Sector	FandA
+pharmaceutical	CI-Sector	Health
+banking and finance	CI-Sector	Financial
+electric utilities	CI-Sector	Energy
+transport	CI-Sector	Transportation
+Critical Communications	CI-Sector	Communications
+Financial Institutions and Customers	CI-Sector	Financial
+Financial Institutions	CI-Sector	Financial
+Dam	CI-Sector	Dams
+Communication	CI-Sector	Communications
+Defense sector	CI-Sector	Defense
+Financial Sector	CI-Sector	Finance
+oil and natural gas	CI-Sector	Energy

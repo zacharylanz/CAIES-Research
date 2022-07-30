@@ -1,0 +1,61 @@
+text	class	lemma
+Fraud	TTP	Fraud
+Ransomware	TTP	Ransomware
+Defacement	TTP	Defacement
+Dos	TTP	DoS
+DDoS	TTP	DoS
+Doxing	TTP	Information_Disclosure
+malware	TTP	Malware
+privilege escalation	TTP	Privilege_Escalation
+SQLi	TTP	SQLi
+Trojan	TTP	Trojan
+Zero Day	TTP	Zeroday
+zero day	TTP	Zeroday
+zeroday	TTP	Zeroday
+denial of service	TTP	DoS
+SQL Injection	TTP	SQLi
+Phishing	TTP	Phishing
+spearphishing	TTP	Phishing
+Spear Phishing	TTP	Phishing
+escalation of privilege	TTP	Privilege_Escalation
+elevation of privilege	TTP	Privilege_Escalation
+elevated system privileges	TTP	Privilege_Escalation
+Fraudulent	TTP	Fraud
+Brute Force	TTP	Brute_Force
+brute-force	TTP	Brute_Force
+brute-forcing	TTP	Brute_Force
+Man-in-the-Middle	TTP	MITM
+ad fraud	TTP	Fraud
+elevation of privileges	TTP	Privilege_Escelation
+distributed denial of service	TTP	DoS
+remote code execution	TTP	Remote_Code_Execution
+Information Disclosure	TTP	Information_Disclosure
+Identity Theft	TTP	Theft
+Data Theft	TTP	Theft
+cyber enabled theft	TTP	Theft
+intellectual property theft	TTP	Theft
+Financial Theft	TTP	Theft
+remote execution of code	TTP	Remote_Code_Execution
+theft of personally identifiable information	TTP	Theft
+arbitrary code execution	TTP	Arbitrary_Code_Execution
+arbitrary execution of code	TTP	Arbitrary_Code_Execution
+Cross site scripting	TTP	Cross_Site_Scripting
+Cross-site scripting	TTP	Cross_Site_Scripting
+cross site scripting (XSS)	TTP	Cross_Site_Scripting
+denial-of-service attack	TTP	DoS
+execute arbitrary code	TTP	Arbitrary_Code_Execution
+information exposure	TTP	Information_Disclosure
+RAT	TTP	Trojan
+Remote Access Trojan	TTP	Trojan
+Trojans	TTP	Trojan
+credential theft	TTP	Theft
+execution of arbitrary code	TTP	Arbitrary_Code_Execution
+Botnet	TTP	Botnet
+MitM	TTP	MITM
+mitm attack	TTP	MITM
+buffer overflow	TTP	Buffer_Overflow
+Path Traversal	TTP	Path_Traversal
+man in the middle	TTP	MITM
+denial of service attack	TTP	DoS
+elevated privileges	TTP	Privilege_Escalation
+botnets	TTP	Botnet

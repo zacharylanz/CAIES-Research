@@ -1,0 +1,122 @@
+Text	Tense	modifier
+Afghan	Afghanistan	NationState
+Albanian	Albania	NationState
+Algerian	Algeria	NationState
+Argentine	Argentina	NationState
+Argentinian	Argentina	NationState
+Australian	Australia	NationState
+Austrian	Austria	NationState
+Bangladeshi	Bangladesh	NationState
+Belgian	Belgium	NationState
+Bolivian	Bolivia	NationState
+Batswana	Botswana	NationState
+Botswanan	Botswana	NationState
+Brazilian	Brazil	NationState
+Bulgarian	Bulgaria	NationState
+Cambodian	Cambodia	NationState
+Cameroonian	Cameroon	NationState
+Canadian	Canada	NationState
+Chilean	Chile	NationState
+Chinese	China	NationState
+Colombian	Colombia	NationState
+Costa Rican	Costa Rica	NationState
+Croatian	Croatia	NationState
+Croat	Croatia	NationState
+Cuban	Cuba	NationState
+Czech	Czech Republic	NationState
+Danish	Denmark	NationState
+Dane	Denmark	NationState
+Dominican	Dominican Republic	NationState
+Ecuadorian	Ecuador	NationState
+Egyptian	Egypt	NationState
+Salvadorian	El Salvador	NationState
+Salvadoran	El Salvador	NationState
+English	England	NationState
+Estonian	Estonia	NationState
+Ethiopian	Ethiopia	NationState
+Fijian	Fiji	NationState
+Finnish	Finland	NationState
+French	France	NationState
+German	Germany	NationState
+Ghanaian	Ghana	NationState
+Greek	Greece	NationState
+Guatemalan	Guatemala	NationState
+Haitian	Haiti	NationState
+Honduran	Honduras	NationState
+Hungarian	Hungary	NationState
+Icelandic	Iceland	NationState
+Indian	India	NationState
+Indonesian	Indonesia	NationState
+Iranian	Iran	NationState
+Iraqi	Iraq	NationState
+Irish	Ireland	NationState
+Israeli	Israel	NationState
+Italian	Italy	NationState
+Jamaican	Jamaica	NationState
+Japanese	Japan	NationState
+Jordanian	Jordan	NationState
+Kenyan	Kenya	NationState
+Kuwaiti	Kuwait	NationState
+Lao	Laos	NationState
+Laotain	Laos	NationState
+Latvian	Latvia	NationState
+Lebanese	Lebanon	NationState
+Libyan	Libya	NationState
+Lithuanian	Lithuania	NationState
+Malagasy	Madagascar	NationState
+Malaysian	Malaysia	NationState
+Malian	Mali	NationState
+Maltese	Malta	NationState
+Mexican	Mexico	NationState
+Mongolian	Mongolia	NationState
+Moroccan	Morocco	NationState
+Mozambican	Mozambique	NationState
+Namibian	Namibia	NationState
+Nepalese	Nepal	NationState
+Dutch	Netherlands	NationState
+Kiwi	New Zealand	NationState
+Nicaraguan	Nicaragua	NationState
+Nigerian	Nigeria	NationState
+Norwegian	Norway	NationState
+Pakistani	Pakistan	NationState
+Panamanian	Panama	NationState
+Paraguayan	Paraguay	NationState
+Peruvian	Peru	NationState
+Filipino	Philippines	NationState
+Philippine	Philippines	NationState
+Polish	Poland	NationState
+Portuguese	Portugal	NationState
+Romanian	Romania	NationState
+Russian	Russia	NationState
+Saudi	Saudi Arabia	NationState
+Scottish	Scotland	NationState
+Senegalese	Senegal	NationState
+Serbian	Serbia	NationState
+Singaporean	Singapore	NationState
+Slovak	Slovakia	NationState
+South African	South Africa	NationState
+Spanish	Spain	NationState
+Sri Lankan	Sri Lanka	NationState
+Sudanese	Sudan	NationState
+Swedish	Sweden	NationState
+Swiss	Switzerland	NationState
+Syrian	Syria	NationState
+Taiwanese	Taiwan	NationState
+Tajikistani	Tajikistan	NationState
+Thai	Thailand	NationState
+Tongan	Tonga	NationState
+Tunisian	Tunisia	NationState
+Turkish	Turkey	NationState
+Ukrainian	Ukraine	NationState
+Emirati	United Arab Emirates	NationState
+British	United Kingdom	NationState
+American	United States	NationState
+Uruguayan	Uruguay	NationState
+Venezuelan	Venezuela	NationState
+Vietnamese	Vietnam	NationState
+Welsh	Wales	NationState
+Zambian	Zambia	NationState
+Zimbabwean	Zimbabwe	NationState
+DPRK	DPRK	NationState
+North Korean	North Korea	NationState
+South Korean	South Korea	NationState
