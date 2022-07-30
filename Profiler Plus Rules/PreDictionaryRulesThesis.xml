@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="PreDictionaryRulesThesis">
+        <Rule Anchor="hyphen#" PatternNumber="4" Creator="copied Zach L 2020/10/03;&#xA;Zach L 2020/10/10;&#xA;Zach L 2020/10/12;&#xA;Zach L 2020/10/13;&#xA;Zach L 2020/10/14">
+            <Pattern>(token: 0 text: hyphen)
+(token: 0 pos: punc)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 text: -)</Reduction>
+        </Rule>
+        <Rule Anchor="dash" PatternNumber="3" Creator="Zach L 2020/10/03;&#xA;Zach L 2020/10/10">
+            <Pattern>(token: 0 lemma: dash)
+(token: 0 pos: punc)</Pattern>
+            <Reduction>(unless (token: 0 text: -) (token: 0 text: -))</Reduction>
+        </Rule>
+        <Rule Anchor="punc" PatternNumber="6" Creator="Zach L 2020/10/03">
+            <Pattern>(token: -1 pos: verb)
+(token: 0 pos: punc)
+(token: 0 lemma: hyphen)
+(token: 1 pos: verb)</Pattern>
+            <Reduction>(delete 0)</Reduction>
+        </Rule>
+        <Rule Anchor="punc" PatternNumber="7" Creator="Zach L 2020/10/12">
+            <Pattern>(token: 0 text: -)</Pattern>
+            <Reduction>(no-repeat)
+(delete 0)</Reduction>
+        </Rule>
+        <Rule Anchor="punc" PatternNumber="8" Creator="Zach L 2020/10/12">
+            <Pattern>(token: 0 text: hyphen)
+(token: 0 lemma: hyphen)</Pattern>
+            <Reduction>(no-repeat)
+(delete 0)</Reduction>
+        </Rule>
+    </Ruleset>
+</xml>

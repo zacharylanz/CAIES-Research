@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="ThesisAccuracyTesting">
+        <Rule Anchor="%every%" PatternNumber="1" Creator="Zach L 2020/09/13;&#xA;Zach L 2020/09/22">
+            <Pattern>(token: 0 class: BOD)</Pattern>
+            <Reduction>(no-repeat)
+(reset C1)
+(reset C2)
+(reset C3)
+(reset C4 )</Reduction>
+            <Comments>reset counter BOD</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="3" Creator="Zach L 2020/09/13;&#xA;Zach L 2020/09/30">
+            <Pattern>(token: 0 class: CI-Sector)
+(Equal token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: TP)
+(increment C1 1)
+(put C1 (0 slot10))</Reduction>
+            <Comments>True Positive CI-Sector</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="7" Creator="copied Zach L 2020/09/13">
+            <Pattern>(token: 0 class: CI-Sector)
+(Different token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: FP)
+(increment C2 1)</Reduction>
+            <Comments>False Positive CI-Sector</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="9" Creator="copied Zach L 2020/09/13">
+            <Pattern>(token: 0 hc1: CI-Sector)
+(Different token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: FN)
+(increment C3 1)</Reduction>
+            <Comments>False Negative CI-Sector</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="11" Creator="copied Zach L 2020/09/13">
+            <Pattern>(token: 0 hc1: %null%)
+(Equal token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: TN)
+(increment C4 1)</Reduction>
+            <Comments>True Negative CI-Sector</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="13" Creator="copied Zach L 2020/09/22;&#xA;Zach L 2020/09/30">
+            <Pattern>(token: 0 class: TTP)
+(Equal token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: TP)
+(increment C1 1)
+(put C1 (0 slot10))</Reduction>
+            <Comments>True Positive TTP</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="14" Creator="copied Zach L 2020/09/22">
+            <Pattern>(token: 0 class: TTP)
+(Different token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: FP)
+(increment C2 1)</Reduction>
+            <Comments>False Positive TTP</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="15" Creator="copied Zach L 2020/09/22">
+            <Pattern>(token: 0 hc1: TTP)
+(Different token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: FN)
+(increment C3 1)</Reduction>
+            <Comments>False Negative TTP</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="18" Creator="copied Zach L 2020/09/22;&#xA;Zach L 2020/09/30">
+            <Pattern>(token: 0 class: Adversary)
+(Equal token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: TP)
+(increment C1 1)
+(put C1 (0 slot10))</Reduction>
+            <Comments>True Positive Adversary</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="19" Creator="copied Zach L 2020/09/22">
+            <Pattern>(token: 0 class: Adversary)
+(Different token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: FP)
+(increment C2 1)</Reduction>
+            <Comments>False Positive Adversary</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="20" Creator="copied Zach L 2020/09/22">
+            <Pattern>(token: 0 hc1: Adversary)
+(Different token1: 0 slot1: class token2: 0 slot2: hc1)</Pattern>
+            <Reduction>(no-repeat)
+(token: 0 slot9: FN)
+(increment C3 1)</Reduction>
+            <Comments>False Negative Adversary</Comments>
+        </Rule>
+    </Ruleset>
+</xml>

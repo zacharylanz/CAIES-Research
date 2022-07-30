@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="ThesisClassifications">
+        <Rule Anchor="AlertStart" PatternNumber="31" Creator="copied Zach L 2020/07/18;&#xA;Zach L 2020/07/21;&#xA;Zach L 2020/07/24">
+            <Pattern>(variable
+(token: 0 class: AlertStart)
+(token: 25 class: EndNum newlabel: endr))</Pattern>
+            <Reduction>(no-repeat)
+(combine start: 0 end: endr slot: text link: %null% exclude yes)
+(token: 1 class: Alert#) </Reduction>
+            <Comments>combine alert number between alert/adv and endnum</Comments>
+        </Rule>
+        <Rule Anchor="NationState" PatternNumber="32" Creator="Zach L 2020/09/23;&#xA;Zach L 2020/09/29;&#xA;Zach L 2020/10/15">
+            <Pattern>(token: 0 pos: adj)
+(token: 0 modifier: NationState)
+(token: 1 class: Adversary)</Pattern>
+            <Reduction>(combine start: 0 end: 1 slot: text)
+(token: 0 lemma: Nation_States)
+(token: 0 class: Adversary)</Reduction>
+            <Comments>classify nation-states</Comments>
+        </Rule>
+        <Rule Anchor="Insider" PatternNumber="34" Creator="Zach L 2020/09/23;&#xA;Zach L 2020/10/15">
+            <Pattern>(token: -2 text: create)
+(token: -1 text: an)
+(token: 0 text: insider except: (class: %null%))
+(token: 2 text: program)</Pattern>
+            <Reduction>(clear 0 class)</Reduction>
+            <Comments>remove insider if its a recommendation</Comments>
+        </Rule>
+        <Rule Anchor="actors" PatternNumber="35" Creator="Zach L 2020/09/30;&#xA;Zach L 2020/10/10;&#xA;Zach L 2020/10/15">
+            <Pattern>(token: -1 modifier: NationState except: (class: Adversary))
+(token: 0 text: actors)
+(token: 0 slot7: human)</Pattern>
+            <Reduction>(token: -1 lemma: Nation_States)
+(token: -1 class: Adversary)</Reduction>
+            <Comments>make nation* actors an adversary</Comments>
+        </Rule>
+        <Rule Anchor="NationState" PatternNumber="36" Creator="Zach L 2020/10/01;&#xA;Zach L 2020/10/03;&#xA;Zach L 2020/10/15">
+            <Pattern>(token: 0 modifier: NationState)
+(token: 1 class: adversary)</Pattern>
+            <Reduction>(combine start: 0 end: 1 slot: text)
+(token: 0 lemma: Nation_States)
+(token: 0 class: Adversary)</Reduction>
+            <Comments>nation - adversary combine</Comments>
+        </Rule>
+        <Rule Anchor="NationState" PatternNumber="38" Creator="Zach L 2020/10/01;&#xA;Zach L 2020/10/03;&#xA;Zach L 2020/10/15">
+            <Pattern>(token: 0 modifier: NationState)
+(token: 1 text: cyber)</Pattern>
+            <Reduction>(combine start: 0 end: 2 slot: text)
+(token: 0 lemma: Nation_States)
+(token: 0 class: Adversary)</Reduction>
+            <Comments>nation - cyber threat</Comments>
+        </Rule>
+        <Rule Anchor="cross" PatternNumber="39" Creator="Zach L 2020/10/03">
+            <Pattern>(token: 0 text: cross)
+(token: 1 pos: punc)
+(token: 2 text: site)
+(token: 3 text: scripting)</Pattern>
+            <Reduction>(combine start: 0 end: 3 slot: text)
+(token: 0 lemma: Cross_Site_Scripting)
+(token: 0 class: TTP)</Reduction>
+            <Comments>cross site scripting set</Comments>
+        </Rule>
+        <Rule Anchor="denial" PatternNumber="41" Creator="copied Zach L 2020/10/03">
+            <Pattern>(token: 0 text: denial)
+(token: 2 text: of)
+(token: 4 text: service)</Pattern>
+            <Reduction>(combine start: 0 end: 4 slot: text)
+(token: 0 lemma: DoS)
+(token: 0 class: TTP)</Reduction>
+            <Comments>DoS set override</Comments>
+        </Rule>
+        <Rule Anchor="NationState" PatternNumber="42" Creator="Zach L 2020/10/03;&#xA;Zach L 2020/10/13">
+            <Pattern>(token: 0 modifier: NationState)
+(token: 1 lemma: national)</Pattern>
+            <Reduction>(combine start: 0 end: 1 slot: text)
+(token: 0 lemma: Nation_States)
+(token: 0 class: Adversary)</Reduction>
+            <Comments>state nationals</Comments>
+        </Rule>
+        <Rule Anchor="anti" PatternNumber="44" Creator="Zach L 2020/10/03">
+            <Pattern>(token: 1 pos: punc)
+(token: 2 class: TTP)</Pattern>
+            <Reduction>(clear 0 class)
+(clear 0 lemma)</Reduction>
+            <Comments>clear anti-*</Comments>
+        </Rule>
+        <Rule Anchor="OGDate" PatternNumber="46" Creator="copied Zach L 2020/10/07;&#xA;Zach L 2020/10/14">
+            <Pattern>(token: -3 lemma: previous)
+(token: -2 lemma: version)
+(token: 0 class: OGdate)</Pattern>
+            <Reduction>(clear 0 class)
+(clear 1 class)</Reduction>
+        </Rule>
+        <Rule Anchor="man" PatternNumber="47" Creator="Zach L 2020/10/10">
+            <Pattern>(token: 0 text: man)
+(token: 1 pos: punc)
+(token: 2 text: in)
+(token: 3 pos: punc)
+(token: 4 text: the)</Pattern>
+            <Reduction>(combine start: 0 end: 6 slot: text)
+(token: 0 lemma: MITM)
+(token: 0 class: TTP)</Reduction>
+            <Comments>mitm</Comments>
+        </Rule>
+        <Rule Anchor="Communications" PatternNumber="49" Creator="Zach L 2020/10/12">
+            <Pattern>(token: 0 class: CI-Sector)
+(token: 1 lemma: integration)</Pattern>
+            <Reduction>(clear 0 class)</Reduction>
+            <Comments>remove entity as sector classification to reduce FP noise</Comments>
+        </Rule>
+        <Rule Anchor="Communications" PatternNumber="51" Creator="Zach L 2020/10/12">
+            <Pattern>(token: -1 pos: prep)
+(token: 0 class: CI-Sector)</Pattern>
+            <Reduction>(clear 0 class)</Reduction>
+            <Comments>remove entity as sector classification to reduce FP noise</Comments>
+        </Rule>
+        <Rule Anchor="Communications" PatternNumber="55" Creator="copied Zach L 2020/10/12">
+            <Pattern>(token: -1 pos: dt)
+(token: 0 class: CI-Sector)</Pattern>
+            <Reduction>(clear 0 class)</Reduction>
+            <Comments>remove entity as sector classification to reduce FP noise</Comments>
+        </Rule>
+        <Rule Anchor="Communications" PatternNumber="56" Creator="Zach L 2020/10/12">
+            <Pattern>(token: -1 tense: infinitive)
+(token: 0 class: CI-Sector)</Pattern>
+            <Reduction>(clear 0 class)</Reduction>
+        </Rule>
+        <Rule Anchor="TTP" PatternNumber="57" Creator="Zach L 2020/10/13;&#xA;Zach L 2020/10/14">
+            <Pattern>(token: -1 text: anti)
+(token: 0 class: TTP)</Pattern>
+            <Reduction>(clear 0 class)</Reduction>
+            <Comments>remove classified TTP if negation appear prior to word. Anti-malware is not recognized as TTP</Comments>
+        </Rule>
+    </Ruleset>
+</xml>

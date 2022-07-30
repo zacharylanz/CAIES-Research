@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="AccuracyOutput">
+        <Rule Anchor="EOD" PatternNumber="1" Creator="Zach L 2020/09/17;&#xA;Zach L 2020/09/22;&#xA;Zach L 2020/09/30;&#xA;Zach L 2020/10/03;&#xA;Zach L 2020/10/13">
+            <Pattern>(token: 0 class: EOD)</Pattern>
+            <Reduction>(no-repeat)
+(csv "Alert" "TP" "FP" "FN" "TN")
+
+(newline)
+(csv Alertcode C1 C2 C3 C4)</Reduction>
+            <Comments>Output counters </Comments>
+        </Rule>
+    </Ruleset>
+</xml>

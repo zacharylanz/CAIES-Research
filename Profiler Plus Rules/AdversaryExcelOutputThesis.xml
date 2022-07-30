@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="AdversaryExcelOutputThesis">
+        <Rule Anchor="EOD" PatternNumber="5" Creator="copied Zach L 2020/08/03;&#xA;Zach L 2020/08/05;&#xA;Zach L 2020/08/29;&#xA;Zach L 2020/09/29;&#xA;Zach L 2020/10/03;&#xA;Zach L 2020/10/07">
+            <Pattern>(token: 0 class: EOD)</Pattern>
+            <Reduction>(no-repeat)
+(csv "Alert#" "Date" "Cyber_Actors" "Nation_States" "Terrorists" "Spies" "Organized_Crime" "Hacktivists" "Cyber_Criminals" "Insider" "APT" )
+
+(newline)
+(put "0" Cyber_Actors) 
+(put "0" Nation_States) 
+(put "0" Terrorists) 
+(put "0" Spies) 
+(put "0" Organized_Crime) 
+(put "0" Hacktivists) 
+(put "0" Cyber_Criminals) 
+(put "0" Insiders) 
+(put "0" APT) 
+
+(put Adversarycode (0 slot1))
+
+(dolist (Adversary (0 slot1 -)) 
+   (put Adversary (0 slot12)) 
+  
+   (put "Cyber_Actors" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Cyber_Actors)) 
+   (put "Nation_States" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Nation_States)) 
+   (put "Terrorists" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Terrorists)) 
+   (put "Spies" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Spies)) 
+   (put "Organized_Crime" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Organized_Crime)) 
+   (put "Hacktivists" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Hacktivists)) 
+   (put "Cyber_Criminals" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Cyber_Criminals)) 
+   (put "Insiders" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" Insiders)) 
+   (put "APT" (0 slot13)) 
+   (when (equal token1: 0 slot1: slot12 token2: 0 slot2: slot13) 
+      (put "1" APT)) 
+ )
+(csv alertcode datecode Cyber_Actors Nation_States Terrorists Spies Organized_Crime Hacktivists Cyber_Criminals Insiders APT)
+</Reduction>
+        </Rule>
+    </Ruleset>
+</xml>

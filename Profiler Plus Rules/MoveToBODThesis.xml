@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="MoveToBODThesis">
+        <Rule Anchor="CI-Sector" PatternNumber="7" Creator="copied Zach L 2020/07/29;&#xA;Zach L 2020/08/03">
+            <Pattern>(token: 0 class: CI-Sector)</Pattern>
+            <Reduction>(put sectorcode (0 slot13))
+(if (token: 0 slot13: %null%)
+    (put (0 lemma) sectorcode) 
+    (progn
+       (append s-token: 0 s-slot: Lemma d-token: 0 d-slot: slot13 link: -)
+       (put (0 slot13) sectorcode)))
+(clear 0 class slot13)</Reduction>
+            <Comments>If slot1 on BOD is empty, put the CI-Sector, if BOD slot1 has a value, append the CI-Sector value. Clear CI-Sector from the 0 token to prevent looping</Comments>
+        </Rule>
+        <Rule Anchor="Alert#" PatternNumber="8" Creator="copied Zach L 2020/07/29">
+            <Pattern>(token: -1 class: AlertStart)
+(token: 0 class: Alert#)
+(token: 1 class: EndNum)</Pattern>
+            <Reduction>(put (0 text) Alertcode)
+(clear 0 class)</Reduction>
+            <Comments>move the alert number into BOD lemma</Comments>
+        </Rule>
+        <Rule Anchor="OGDate" PatternNumber="9" Creator="copied Zach L 2020/07/29;&#xA;Zach L 2020/09/13">
+            <Pattern>(token: -1 class: ogrelease)
+(token: 0 class: OGDate)</Pattern>
+            <Reduction>(put (0 text) Datecode)
+(clear 0 class)</Reduction>
+            <Comments>move the date into BOD lemma</Comments>
+        </Rule>
+        <Rule Anchor="Adversary" PatternNumber="11" Creator="copied Zach L 2020/08/03;&#xA;Zach L 2020/08/04">
+            <Pattern>(token: 0 class: Adversary)</Pattern>
+            <Reduction>(put Adversarycode (0 slot11))
+(if (token: 0 slot11: %null%)
+    (put (0 lemma) Adversarycode) 
+    (progn
+       (append s-token: 0 s-slot: Lemma d-token: 0 d-slot: slot11 link: -)
+       (put (0 slot11) Adversarycode)))
+(clear 0 class slot11)</Reduction>
+            <Comments>Adversary class append</Comments>
+        </Rule>
+        <Rule Anchor="TTP" PatternNumber="13" Creator="copied Zach L 2020/08/03">
+            <Pattern>(token: 0 class: TTP)</Pattern>
+            <Reduction>(put TTPcode (0 slot12))
+(if (token: 0 slot12: %null%)
+    (put (0 lemma) TTPcode) 
+    (progn
+       (append s-token: 0 s-slot: Lemma d-token: 0 d-slot: slot12 link: -)
+       (put (0 slot12) TTPcode)))
+(clear 0 class slot12)</Reduction>
+            <Comments>TTP class append</Comments>
+        </Rule>
+    </Ruleset>
+</xml>

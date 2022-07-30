@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="ThesisPreprocessing">
+        <Rule Anchor="noun" PatternNumber="4" Creator="Zach L 2020/07/04">
+            <Pattern>(token: 0 class: URL)</Pattern>
+            <Reduction>(delete 0)</Reduction>
+        </Rule>
+        <Rule Anchor="punc" PatternNumber="5" Creator="Zach L 2020/07/04">
+            <Pattern>(token: 0 lemma: NUM-SYMBOL)</Pattern>
+            <Reduction>(delete 0)</Reduction>
+        </Rule>
+        <Rule Anchor="month" PatternNumber="19" Creator="copied Zach L 2020/07/08;&#xA;Zach L 2020/07/29">
+            <Pattern>(token: 0 class: month)
+(token: 1 pos: number)</Pattern>
+            <Reduction>(combine start: 0 end: 3 slot: text)
+(token: 0 class: date)</Reduction>
+            <Comments>create a date combo</Comments>
+        </Rule>
+        <Rule Anchor="original" PatternNumber="20" Creator="copied Zach L 2020/07/08">
+            <Pattern>(token: 0 text: original)
+(token: 1 text: release)
+(token: 2 text: date)
+(token: 3 pos: punc)</Pattern>
+            <Reduction>(combine start: 0 end: 3 slot: text link: )
+(token: 0 class: ogrelease)</Reduction>
+            <Comments>og release class</Comments>
+        </Rule>
+        <Rule Anchor="date" PatternNumber="21" Creator="copied Zach L 2020/07/08">
+            <Pattern>(token: -1 class: ogrelease)
+(token: 0 class: date)</Pattern>
+            <Reduction>(token: 0 class: OGDate)</Reduction>
+            <Comments>OGDate class</Comments>
+        </Rule>
+        <Rule Anchor="revised" PatternNumber="22" Creator="copied Zach L 2020/07/08">
+            <Pattern>(token: 0 text: revised)
+(token: 1 pos: punc)
+(token: 2 class: month)</Pattern>
+            <Reduction>(combine start: 0 end: 1 slot: text link: )
+(token: 0 class: LRevision)</Reduction>
+            <Comments>LRevision class</Comments>
+        </Rule>
+        <Rule Anchor="date" PatternNumber="23" Creator="copied Zach L 2020/07/08">
+            <Pattern>(token: -1 class: LRevision)
+(token: 0 class: date)</Pattern>
+            <Reduction>(token: 0 class: RVDate)</Reduction>
+            <Comments>RVDate class</Comments>
+        </Rule>
+        <Rule Anchor="advisory" PatternNumber="28" Creator="Zach L 2020/07/18;&#xA;Zach L 2020/07/21;&#xA;Zach L 2020/07/24;&#xA;Zach L 2020/07/29">
+            <Pattern>(token: -1 Uppercase: all-uppercase)
+(token: -1 text: ICS)
+(token: 0 text: Advisory except: (class: AlertStart))
+(token: 0 Uppercase: proper-uppercase)</Pattern>
+            <Reduction>(token: 0 class: AlertStart)</Reduction>
+            <Comments>set ICSadv class</Comments>
+        </Rule>
+        <Rule Anchor="default" PatternNumber="34" Creator="Zach L 2020/07/18;&#xA;Zach L 2020/07/20;&#xA;Zach L 2020/07/21;&#xA;Zach L 2020/07/24;&#xA;Zach L 2020/07/29;&#xA;Zach L 2020/10/15">
+            <Pattern>(token: -2 text: Alert except: (class: AlertStart)) 
+(token: -1 pos: punc except: (class: CISAAlert))
+(token: 0 Uppercase: all-uppercase)</Pattern>
+            <Reduction>(unless (token: -1 class: CISAAlert) (token: -2 class: AlertStart))</Reduction>
+            <Comments>set CISAAlert class</Comments>
+        </Rule>
+        <Rule Anchor="number" PatternNumber="36" Creator="Zach L 2020/07/18;&#xA;Zach L 2020/07/20;&#xA;Zach L 2020/07/29;&#xA;Zach L 2020/09/13">
+            <Pattern>(token: -2 tense: default)
+(token: -2 uppercase: all-uppercase)
+(token: -1 pos: punc)
+(token: 0 lemma: number except: (class: EndNum))
+(token: 1 lemma: #)</Pattern>
+            <Reduction>(unless (token: -1 class: EndNum) (token: 0 class: EndNum))</Reduction>
+            <Comments>attempt to classify ending of alert numbers</Comments>
+        </Rule>
+        <Rule Anchor="number" PatternNumber="37" Creator="Zach L 2020/09/13;&#xA;Zach L 2020/10/16">
+            <Pattern>(token: -1 pos: punc)
+(token: 0 lemma: number except: (class: EndNum))
+(token: 1 pos: number)
+(token: 2 Uppercase: proper-uppercase)</Pattern>
+            <Reduction>(unless (token: -1 class: EndNum) (token: 0 class: EndNum))</Reduction>
+            <Comments>classify end of alert num for CISA alerts</Comments>
+        </Rule>
+        <Rule Anchor="number" PatternNumber="43" Creator="copied Zach L 2020/09/13;&#xA;Zach L 2020/09/22;&#xA;Zach L 2020/10/15">
+            <Pattern>(token: -3 uppercase: all-uppercase)
+(token: -1 pos: punc except: (class: EndNum))
+(token: 0 pos: noun except: (class: EndNum))
+(token: 1 pos: number)</Pattern>
+            <Reduction>(unless (token: -1 class: EndNum) (token: 0 class: EndNum))</Reduction>
+            <Comments>classify end of alert num for CISA alerts</Comments>
+        </Rule>
+        <Rule Anchor="advisory" PatternNumber="45" Creator="Zach L 2020/09/13;&#xA;Zach L 2020/09/23">
+            <Pattern>(token: -1 text: medical)
+(token: -2 lemma: ics)</Pattern>
+            <Reduction>(unless (token: 0 class: AlertStart) (token: 0 class: AlertStart))</Reduction>
+            <Comments>classify medical advisory</Comments>
+        </Rule>
+        <Rule Anchor="number" PatternNumber="47" Creator="copied Zach L 2020/09/30;&#xA;Zach L 2020/10/16">
+            <Pattern>(token: -1 pos: punc)
+(token: 0 lemma: number except: (class: EndNum))
+(token: 1 lemma: #)
+(token: 1 pos: noun)</Pattern>
+            <Reduction>(unless (token: -1 class: EndNum) (token: 0 class: EndNum))</Reduction>
+            <Comments>classify end of alert num for CISA alerts Variation2</Comments>
+        </Rule>
+        <Rule Anchor="release" PatternNumber="49" Creator="Zach L 2020/09/30">
+            <Pattern>(token: 0 text: release)
+(token: 1 text: date)
+(token: 2 pos: punc)</Pattern>
+            <Reduction>(combine start: 0 end: 2 slot: text link: )
+(token: 0 class: ogrelease)</Reduction>
+            <Comments>release date variation</Comments>
+        </Rule>
+    </Ruleset>
+</xml>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml application="Profiler Plus" api="3" rcsId="$Id: $">
+    <Ruleset Table="ThesisDictionaries">
+        <Rule Anchor="%every%" PatternNumber="4" Creator="copied Zach L 2020/06/15;&#xA;Zach L 2020/07/04">
+            <Pattern>( file 0 "CISectors.txt" newlabel: CISector slot: text multiple: yes case: no ) </Pattern>
+            <Reduction>(no-repeat
+(supersede source: CISector destination: 0)
+)</Reduction>
+            <Comments>Access CI Sectors dictionary</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="6" Creator="copied Zach L 2020/07/01;&#xA;Zach L 2020/07/04">
+            <Pattern>( file 0 "monthsdict.txt" newlabel: monthsdict slot: text multiple: yes case: no ) </Pattern>
+            <Reduction>(no-repeat
+(supersede source: monthsdict destination: 0)
+)</Reduction>
+            <Comments>Access months dictionary</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="7" Creator="Zach L 2020/07/04;&#xA;Zach L 2020/07/15">
+            <Pattern>( file 0 "ThreatTable.txt" newlabel: ThreatTable slot: text multiple: yes case: no ) </Pattern>
+            <Reduction>(no-repeat
+(supersede source: ThreatTable destination: 0)
+)</Reduction>
+            <Comments>Access Threat Table dictionary</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="9" Creator="copied Zach L 2020/07/16">
+            <Pattern>( file 0 "TTPsTable.txt" newlabel: TTPsTable slot: text multiple: yes case: no ) </Pattern>
+            <Reduction>(no-repeat
+(supersede source: TTPsTable destination: 0)
+)</Reduction>
+            <Comments>Access TTPs Table</Comments>
+        </Rule>
+        <Rule Anchor="%every%" PatternNumber="11" Creator="copied Zach L 2020/09/23">
+            <Pattern>( file 0 "Country_adj.txt" newlabel: CountryTable slot: text multiple: yes case: no ) </Pattern>
+            <Reduction>(no-repeat
+(supersede source: CountryTable destination: 0)
+)</Reduction>
+            <Comments>Access TTPs Table</Comments>
+        </Rule>
+    </Ruleset>
+</xml>
