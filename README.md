@@ -19,3 +19,5 @@ Rule and dictionary usage requires access to:
 - Profiler Plus
 - XERF
 - TERF
+
+Refer to Appendix A in the published article for a full annotation guide supporting accuracy, precision and recall analysis.
